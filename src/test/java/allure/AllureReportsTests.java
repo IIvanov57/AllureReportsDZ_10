@@ -3,6 +3,7 @@ package allure;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.EventsCollector;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -59,7 +60,7 @@ public class AllureReportsTests {
 
   @Test
   void checkIssueWithStepsTest() {
-    SelenideLogger.addListener("allure", new EventsCollector());
+    SelenideLogger.addListener("allure", new AllureSelenide());
 
     IssueSteps steps = new IssueSteps();
 
